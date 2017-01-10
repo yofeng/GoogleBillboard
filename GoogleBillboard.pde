@@ -5,10 +5,15 @@ public void setup()
      String digits = e.substring(2,12); //up to but not including 12
      double dNum = Double.parseDouble(digits);
      System.out.println(dNum);
+     int a = 0;
+     while(isPrime == false)
+     {
+     	
+     }
 }  
 public void draw()  
 {   
-	for(int t=2; t//not needed for this assignment
+	//not needed for this assignment
 }  
 public boolean isPrime(double dNum)  
 {   
