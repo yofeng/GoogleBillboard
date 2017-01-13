@@ -2,13 +2,15 @@ public final static String e = "2.7182818284590452353602874713526624977572470936
 public void setup()  
 {            
      noLoop();
-     String digits = e.substring(2,12); //up to but not including 12
-     double dNum = Double.parseDouble(digits);
-     System.out.println(dNum);
-     int a = 0;
-     while(isPrime == false)
+     //moves through digits of e until 19 digit prime is found
+     for(int n = 2; n < e.length()-10; n++)
      {
-     	
+     	String digits = e.substring(n,n+10); //up to but not including 12
+     	double dNum = Double.parseDouble(digits);
+     	if(isPrime(dNum))
+     	{
+     		System.out.println(dNum);
+     	}
      }
 }  
 public void draw()  
@@ -17,12 +19,16 @@ public void draw()
 }  
 public boolean isPrime(double dNum)  
 {   
-    if(dNum < 2)
-    	return false;
-    for(int i=2; i < Math.sqrt(dNum); i++)
+    if(dNum >= 2)
     {
-    	if(dNum % 2 == 0)
-    		return false;
-    }
-    return true;  
-} 
+	    for(int i=2; i <= Math.sqrt(dNum); i++)
+	    {
+	    	if(dNum % i == 0)
+	    	{
+	    		return false;
+	    	}
+	    }
+	    return true; 
+	}
+	return false;
+}
